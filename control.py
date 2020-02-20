@@ -78,3 +78,10 @@ for item in library:
     new_library.append([calcVal(item), item])
 
 sorted_library = sorted(new_library, key=lambda x: x[0])
+
+addable_library = list()
+for score, library in sorted_library:
+    add_score, new_days_left = addable(days_left, library)
+    days_left = new_days_left
+    library.append(add_score)
+    addable_library.append(library)
