@@ -85,3 +85,16 @@ for score, library in sorted_library:
     days_left = new_days_left
     library.append(add_score)
     addable_library.append(library)
+
+for books, days_to_reg, books_per_day, books_index, addable in addable_library:
+    with open("data\\"+datasets[0]+".txt", "r", encoding="ascii") as f:
+        for book in f.readlines()[books_index].split():
+            if(addable > 0):
+                books_scanned.append(book)
+                addable -= 1
+
+print("Books Scanned: ", len(books_scanned))
+
+with open("Books_Scanned.txt", "w") as out:
+    for book in books_scanned:
+        out.write(book + "\n")
