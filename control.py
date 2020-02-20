@@ -62,3 +62,12 @@ def calcVal(library):
         books -= books_per_day
         days_taken += 1
     return days_taken
+
+def addable(days_left, library):
+    books, days_to_reg, books_per_day, books_index = library
+    books = int(books)
+    days_to_reg = int(days_to_reg)
+    books_per_day = int(books_per_day)
+    days_left = days_left - days_to_reg
+    readable = days_left * books_per_day
+    return readable, days_left
