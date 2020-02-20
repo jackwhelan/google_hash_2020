@@ -71,3 +71,10 @@ def addable(days_left, library):
     days_left = days_left - days_to_reg
     readable = days_left * books_per_day
     return readable, days_left
+
+new_library = list()
+for item in library:
+    value = calcVal(item)
+    new_library.append([calcVal(item), item])
+
+sorted_library = sorted(new_library, key=lambda x: x[0])
