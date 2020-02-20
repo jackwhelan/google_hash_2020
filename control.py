@@ -42,3 +42,23 @@ for dataset in datasets:
                 library.append(current_library)
         lib_count += 1
     break
+
+# print(library, "\n\n\n")
+
+# library_sorted = list()
+# for lib in library:
+#     library_sorted.append(lib.sort())
+
+# print(library, "\n\n\n")
+
+def calcVal(library):
+    books, days_to_reg, books_per_day, books_index = library
+    books = int(books)
+    days_to_reg = int(days_to_reg)
+    books_per_day = int(books_per_day)
+
+    days_taken = days_to_reg
+    while books > 0:
+        books -= books_per_day
+        days_taken += 1
+    return days_taken
